@@ -52,7 +52,7 @@ body{
 }
 
 .water{
-    width: 100%;
+    width: 100%;    
 }
 
 .tube.selected{
@@ -60,3 +60,11 @@ body{
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     transform: translateY(-20px);
 }
+.more-info {
+    background-color:rgb(173, 255, 231);
+    border: 2px dashed rgb(165, 204, 255);
+    border-radius: 80px;
+    padding: 30px;
+    margin: 20px;
+  }
+  
