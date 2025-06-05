@@ -6,8 +6,88 @@
     <title>Water Puzzle</title>
     <link rel="stylesheet" href="style.css">
     <script src="waterpuzzle.js"></script>
+    <style>
+        body{
+            background-color:rgb(219, 255, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            border: 1px dashed blue;    
+            border-radius: 200px;
+            margin: 50px;
+        }
+        
+        .game-area{
+            width: 80%;
+            border-radius: 10px;
+            padding:20px;
+            margin: 5px;
+            text-align: center; 
+        }
+        
+        #game-info{
+            background-color:rgb(179, 252, 255);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #controls{
+            background-color:rgb(190, 234, 255);
+        }
+        
+        #game-container{
+            background-color:rgb(173, 255, 231);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .tube{
+            width: 50px;
+            height: 200px;
+            border: 2px solid black;
+            border-top: 0px;
+            border-radius: 0 0  10px 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column-reverse;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .water{
+            width: 100%;    
+        }
+        
+        .tube.selected{
+            border-color: 'red';
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            transform: translateY(-20px);
+        }
+        .more-info {
+            background-color:rgb(173, 255, 231);
+            border: 2px dashed rgb(165, 204, 255);
+            border-radius: 80px;
+            padding: 30px;
+            margin: 20px;
+          }
+          
+    </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">首頁</a>
+        <a href="homework.html">乘法表</a>
+        <a href="about.html">關於</a>
+        <a href="research.html">研究</a>
+        <a href="WaterPuzzle.html">小遊戲</a>
+        <a href="https://uto-uto.github.io/2025-react-app/">作業區</a>
+    </nav>
     <h1>2025 Water Puzzle Game</h1>
     <div id="game-info" class="game-area">
         <p>關卡：<span id=level-count>1</span></p>
@@ -30,13 +110,6 @@
         <button id ="play-button">PLAY</button>
     </div>
     <div id="game-container" class="game-area">
-    </div>
-    <div class="more-info" id="moreInfo">
-        <a href="index.html">首頁</a>
-        <a href="homework.html">乘法表</a>
-        <a href="about.html">關於</a>
-        <a href="research.html">研究</a>
-        <a href="WaterPuzzle.html">小遊戲</a>
     </div>
 </body>
 </html>

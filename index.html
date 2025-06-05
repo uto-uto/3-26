@@ -1,75 +1,141 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首頁</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
+
+        nav {
+            background-color: #ffccdd;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d63384;
+            text-decoration: underline;
+        }
+
         header {
-            background-color: #e4a9f0;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(to right, #ffccdd, #f9dfff);
+            padding: 60px 20px;
+            text-align: center;
+            color: #d63384;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+
         .intro-text {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
         }
+
         button {
-            background-color: #e4a9f0;
+            background-color: #d63384;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
+
         button:hover {
-            background-color: #e4a9f0;
+            background-color: #b92e6d;
+            transform: scale(1.05);
         }
+
         .more-info {
+            max-width: 800px;
+            margin: 20px auto;
             display: none;
-            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff0f5;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             font-size: 16px;
             line-height: 1.6;
+            text-align: center;
+        }
+
+        .more-info a {
+            display: inline-block;
+            margin: 8px 10px;
+            text-decoration: none;
+            color: #d63384;
+            font-weight: bold;
+        }
+
+        .more-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
 
+    <nav>
+        <a href="index.html">首頁</a>
+        <a href="homework.html">乘法表</a>
+        <a href="about.html">關於</a>
+        <a href="research.html">研究</a>
+        <a href="WaterPuzzle.html">小遊戲</a>
+    </nav>
+
     <header>
-        <h1>大家好，歡迎來到我的自我介紹頁面！</h1>
+        <h1>歡迎來到我的個人網頁</h1>
     </header>
 
     <div class="container">
         <p class="intro-text">
-            大家好，我是 蔡庠榮。目前是南台科科技大學五專部的學生。
+            大家好，我是 <strong>蔡庠榮</strong>，目前就讀於南台科技大學五專部。
         </p>
-        
+
         <button onclick="toggleMoreInfo()">點擊了解更多</button>
-        
-        <div class="more-info" id="moreInfo">
-            <a href="index.html">首頁</a>
-            <a href="homework.html">乘法表</a>
-            <a href="about.html">關於</a>
-            <a href="research.html">研究</a>
-            <a href="WaterPuzzle.html">小遊戲</a>
-            <p>我超強！</p>
+    </div>
+
+    <div class="more-info" id="moreInfo">
+        <p>這個網站是我自我介紹與作品展示的地方，歡迎點擊上方選單參觀！</p>
+        <div>
+            <a href="homework.html">🔢 乘法表</a>
+            <a href="about.html">📄 關於我</a>
+            <a href="research.html">🔬 研究主題</a>
+            <a href="WaterPuzzle.html">🎮 小遊戲</a>
         </div>
     </div>
 
@@ -78,6 +144,7 @@
             var moreInfo = document.getElementById("moreInfo");
             if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
                 moreInfo.style.display = "block";
+                moreInfo.scrollIntoView({ behavior: "smooth" });
             } else {
                 moreInfo.style.display = "none";
             }
@@ -85,4 +152,5 @@
     </script>
 
 </body>
+
 </html>

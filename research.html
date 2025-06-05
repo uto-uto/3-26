@@ -5,41 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>研究</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        div#myresearch {
-            width: 50%;
-            background-color: antiquewhite;
-            padding: 30px;
-            margin: 0 auto;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #ffccdd;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d63384;
+            text-decoration: underline;
+        }
+
+        #myresearch {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #d63384;
+            border-bottom: 2px solid #ffb6c1;
+            padding-bottom: 5px;
+        }
+
+        ol {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
-    <a href="index.html">首頁</a>
-    <a href="about.html">關於我</a>
-    <a href="research.html">研究</a>
-    <a href="homework.html">作業</a>
-    <a href="WaterPuzzle.html">小遊戲</a>
+    <nav class="more-info" id="moreInfo">
+        <a href="index.html">首頁</a>
+        <a href="homework.html">乘法表</a>
+        <a href="about.html">關於</a>
+        <a href="research.html">研究</a>
+        <a href="WaterPuzzle.html">小遊戲</a>
+        <a href="https://uto-uto.github.io/2025-react-app/">作業區</a>
+    </nav>
     <div id="myresearch">
         <h3>研究主題</h3>
         <ol>
             <li>影像處理 (Image Processing)</li>
-            <li>
-                電腦視覺 (Computer Vision)
-            </li>
-            <li>
-                圖訊識別 (Pattern Recognition)
-            </li>
-            <li>
-                工業檢測 (Industrial Inspection)
-            </li>
-            <li>
-                人工智慧(Artificial Intelligence)
-            </li>
-            <li>
-                智慧農業(Smart Agriculture)
-            </li>
+            <li>電腦視覺 (Computer Vision)</li>
+            <li>圖訊識別 (Pattern Recognition)</li>
+            <li>工業檢測 (Industrial Inspection)</li>
+            <li>人工智慧 (Artificial Intelligence)</li>
+            <li>智慧農業 (Smart Agriculture)</li>
         </ol>
     </div>
 </body>
