@@ -55,3 +55,47 @@ h4 {
 ul {
     line-height: 1.8;
 }
+
+.form-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-section label {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+}
+
+input[type="number"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100px;
+    text-align: center;
+}
+
+.table-section {
+    margin-top: 30px;
+    overflow-x: auto;
+    text-align: center;
+}
+
+.multiplication-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.multiplication-table td {
+    border: 1px solid #aaa;
+    padding: 12px 18px;
+    text-align: center;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.multiplication-table td:hover {
+    background-color: #ffe6f0;
+}

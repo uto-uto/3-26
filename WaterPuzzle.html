@@ -1,115 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Puzzle</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="waterpuzzle.js"></script>
-    <style>
-        body{
-            background-color:rgb(219, 255, 255);
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            border: 1px dashed blue;    
-            border-radius: 200px;
-            margin: 50px;
-        }
-        
-        .game-area{
-            width: 80%;
-            border-radius: 10px;
-            padding:20px;
-            margin: 5px;
-            text-align: center; 
-        }
-        
-        #game-info{
-            background-color:rgb(179, 252, 255);
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #controls{
-            background-color:rgb(190, 234, 255);
-        }
-        
-        #game-container{
-            background-color:rgb(173, 255, 231);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .tube{
-            width: 50px;
-            height: 200px;
-            border: 2px solid black;
-            border-top: 0px;
-            border-radius: 0 0  10px 10px;
-            margin: 10px;
-            display: flex;
-            flex-direction: column-reverse;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-        
-        .water{
-            width: 100%;    
-        }
-        
-        .tube.selected{
-            border-color: 'red';
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-            transform: translateY(-20px);
-        }
-        .more-info {
-            background-color:rgb(173, 255, 231);
-            border: 2px dashed rgb(165, 204, 255);
-            border-radius: 80px;
-            padding: 30px;
-            margin: 20px;
-          }
-          
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="waterpuzzle.js"></script>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      border: 1px dashed #ff69b4;
+      border-radius: 60px;
+      margin: 20px;
+    }
+
+    nav {
+      background-color: #ffccd5;
+      padding: 10px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #b30059;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff4081;
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    .game-area {
+      width: 80%;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    #game-info {
+      background-color: #ffd6e0;
+    }
+
+    #controls {
+      background-color: #ffe6f0;
+    }
+
+    #game-container {
+      background-color: #fff0f5;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 2px dashed #ffb3c6;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .tube {
+      width: 50px;
+      height: 200px;
+      border: 2px solid #d63384;
+      border-top: 0px;
+      border-radius: 0 0 10px 10px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column-reverse;
+      overflow: hidden;
+      margin-top: 20px;
+      background-color: white;
+    }
+
+    .water {
+      width: 100%;
+    }
+
+    .tube.selected {
+      border-color: #ff4081;
+      box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+      transform: translateY(-20px);
+    }
+
+    #controls select,
+    #controls button {
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 8px;
+      border: 1px solid #d63384;
+      font-size: 16px;
+    }
+
+    #controls button {
+      background-color: #d63384;
+      color: white;
+      cursor: pointer;
+    }
+
+    #controls button:hover {
+      background-color: #b30059;
+    }
+
+    .more-info {
+      background-color: #ffe6f0;
+      border: 2px dashed #ffb3c6;
+      border-radius: 80px;
+      padding: 30px;
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">首頁</a>
-        <a href="homework.html">乘法表</a>
-        <a href="about.html">關於</a>
-        <a href="research.html">研究</a>
-        <a href="WaterPuzzle.html">小遊戲</a>
-        <a href="https://uto-uto.github.io/2025-react-app/">作業區</a>
-    </nav>
-    <h1>2025 Water Puzzle Game</h1>
-    <div id="game-info" class="game-area">
-        <p>關卡：<span id=level-count>1</span></p>
-        <p>完成的試管：<span id="completed-tubes-count">0</span></p>
-    </div>
-    <div id="controls" class="game-area">
-        <label for="level-select">選擇關卡</label>
-        <select id="level-select">
-            <option value="1">Level 1</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
-            <option value="4">Level 4</option>
-            <option value="5">Level 5</option>
-            <option value="6">Level 6</option>
-            <option value="7">Level 7</option>
-            <option value="8">Level 8</option>
-            <option value="9">Level 9</option>
-            <option value="10">Level 10</option>
-        </select>
-        <button id ="play-button">PLAY</button>
-    </div>
-    <div id="game-container" class="game-area">
-    </div>
+  <nav>
+    <a href="index.html">首頁</a>
+    <a href="homework.html">乘法表</a>
+    <a href="about.html">關於</a>
+    <a href="research.html">研究</a>
+    <a href="WaterPuzzle.html">小遊戲</a>
+    <a href="https://uto-uto.github.io/2025-react-app/">作業區</a>
+  </nav>
+
+  <h1>2025 Water Puzzle Game</h1>
+
+  <div id="game-info" class="game-area">
+    <p>關卡：<span id="level-count">1</span></p>
+    <p>完成的試管：<span id="completed-tubes-count">0</span></p>
+  </div>
+
+  <div id="controls" class="game-area">
+    <label for="level-select">選擇關卡</label>
+    <select id="level-select">
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+      <option value="4">Level 4</option>
+      <option value="5">Level 5</option>
+      <option value="6">Level 6</option>
+      <option value="7">Level 7</option>
+      <option value="8">Level 8</option>
+      <option value="9">Level 9</option>
+      <option value="10">Level 10</option>
+    </select>
+    <button id="play-button">PLAY</button>
+  </div>
+
+  <div id="game-container" class="game-area"></div>
 </body>
 </html>
