@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>乘法表生成器</title>
   <link rel="stylesheet" href="style.css">
+  <!-- 內部樣式：設定表格、輸入框等外觀 -->
   <style>
     table {
       border-collapse: collapse;
@@ -19,11 +20,10 @@
       padding: 5px;
       margin: 10px;
     }
-
-    
   </style>
 </head>
 <body>
+  <!-- 導覽列，連結到各個頁面 -->
   <nav class="more-info" id="moreInfo">
     <a href="index.html">🏠 首頁</a>
     <a href="homework.html">🔢 乘法表</a>
@@ -31,35 +31,40 @@
     <a href="research.html">🔬 研究主題</a>
     <a href="WaterPuzzle.html">🎮 小遊戲</a>
     <a href="https://uto-uto.github.io/2025-react-app/">📚 作業區</a>
-</nav>
+  </nav>
 
+  <!-- 頁面標題 -->
   <h1>乘法表生成器</h1>
 
+  <!-- 輸入欄位與按鈕，讓使用者輸入數字並生成乘法表 -->
   <label for="size">請輸入數字 (n)：</label>
   <input type="number" id="size" min="1" value="5">
   <button onclick="generateTable()">生成乘法表</button>
 
+  <!-- 乘法表顯示區 -->
   <div id="tableContainer"></div>
 
+  <!-- JavaScript：根據輸入生成乘法表 -->
   <script>
     function generateTable() {
-      const n = document.getElementById('size').value;
+      const n = document.getElementById('size').value; // 取得使用者輸入的數字
       const tableContainer = document.getElementById('tableContainer');
       tableContainer.innerHTML = '';  // 清空之前的表格
 
-      const table = document.createElement('table');
+      const table = document.createElement('table'); // 建立表格元素
       
+      // 產生 n x n 的乘法表
       for (let i = 1; i <= n; i++) {
-        const row = document.createElement('tr');
+        const row = document.createElement('tr'); // 建立一列
         for (let j = 1; j <= n; j++) {
-          const cell = document.createElement('td');
-          cell.textContent = i * j;
-          row.appendChild(cell);
+          const cell = document.createElement('td'); // 建立一格
+          cell.textContent = i * j; // 設定格子的內容為 i*j
+          row.appendChild(cell); // 把格子加到列上
         }
-        table.appendChild(row);
+        table.appendChild(row); // 把列加到表格上
       }
       
-      tableContainer.appendChild(table);
+      tableContainer.appendChild(table); // 顯示表格
     }
   </script>
 </body>

@@ -1,3 +1,4 @@
+/* 設定整體字型與背景顏色 */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f2f2f2;
@@ -5,12 +6,14 @@ body {
     padding: 0;
 }
 
+/* 導覽列樣式 */
 nav {
     background-color: #ffccdd;
     padding: 10px 20px;
     text-align: center;
 }
 
+/* 導覽列連結樣式 */
 nav a {
     margin: 0 15px;
     text-decoration: none;
@@ -18,11 +21,13 @@ nav a {
     font-weight: bold;
 }
 
+/* 導覽列連結滑鼠懸停效果 */
 nav a:hover {
     color: #d63384;
     text-decoration: underline;
 }
 
+/* 主要內容區塊樣式 */
 .container {
     max-width: 800px;
     margin: 30px auto;
@@ -32,6 +37,7 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 表格樣式 */
 table {
     border: 1px solid #ffc0cb;
     border-collapse: collapse;
@@ -42,31 +48,37 @@ table {
     overflow: hidden;
 }
 
+/* 表格儲存格樣式 */
 td {
     padding: 15px;
 }
 
+/* 小標題樣式 */
 h4 {
     color: #d63384;
     border-bottom: 2px solid #ffb6c1;
     padding-bottom: 5px;
 }
 
+/* 列表行距 */
 ul {
     line-height: 1.8;
 }
 
+/* 表單區塊樣式 */
 .form-section {
     margin-top: 20px;
     text-align: center;
 }
 
+/* 表單標籤樣式 */
 .form-section label {
     font-size: 18px;
     margin-right: 10px;
     color: #333;
 }
 
+/* 數字輸入框樣式 */
 input[type="number"] {
     padding: 8px;
     font-size: 16px;
@@ -76,18 +88,21 @@ input[type="number"] {
     text-align: center;
 }
 
+/* 乘法表區塊樣式 */
 .table-section {
     margin-top: 30px;
     overflow-x: auto;
     text-align: center;
 }
 
+/* 乘法表表格樣式 */
 .multiplication-table {
     border-collapse: collapse;
     margin: 0 auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 乘法表儲存格樣式 */
 .multiplication-table td {
     border: 1px solid #aaa;
     padding: 12px 18px;
@@ -96,6 +111,7 @@ input[type="number"] {
     transition: background-color 0.3s;
 }
 
+/* 乘法表儲存格滑鼠懸停效果 */
 .multiplication-table td:hover {
     background-color: #ffe6f0;
 }

@@ -6,6 +6,7 @@
   <title>Water Puzzle</title>
   <link rel="stylesheet" href="style.css">
   <script src="waterpuzzle.js"></script>
+  <!-- 內部樣式：設定遊戲頁面外觀 -->
   <style>
     body {
       background-color: #ffe6f0;
@@ -125,6 +126,7 @@
   </style>
 </head>
 <body>
+  <!-- 導覽列，連結到各個頁面 -->
   <nav>
     <a href="index.html">首頁</a>
     <a href="homework.html">乘法表</a>
@@ -134,13 +136,16 @@
     <a href="https://uto-uto.github.io/2025-react-app/">作業區</a>
   </nav>
 
+  <!-- 遊戲標題 -->
   <h1>2025 Water Puzzle Game</h1>
 
+  <!-- 遊戲資訊區：顯示目前關卡與完成的試管數 -->
   <div id="game-info" class="game-area">
     <p>關卡：<span id="level-count">1</span></p>
     <p>完成的試管：<span id="completed-tubes-count">0</span></p>
   </div>
 
+  <!-- 控制區：選擇關卡與開始遊戲按鈕 -->
   <div id="controls" class="game-area">
     <label for="level-select">選擇關卡</label>
     <select id="level-select">
@@ -158,6 +163,6 @@
     <button id="play-button">PLAY</button>
   </div>
 
+  <!-- 遊戲主區：顯示水管與水的狀態 -->
   <div id="game-container" class="game-area"></div>
 </body>
-</html>

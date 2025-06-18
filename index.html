@@ -7,6 +7,7 @@
     <title>首頁</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* 設定整體字型與背景 */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f2f2f2;
@@ -14,6 +15,7 @@
             padding: 0;
         }
 
+        /* 導覽列樣式 */
         nav {
             background-color: #ffccdd;
             padding: 10px 20px;
@@ -35,6 +37,7 @@
             text-decoration: underline;
         }
 
+        /* 頁首樣式 */
         header {
             background: linear-gradient(to right, #ffccdd, #f9dfff);
             padding: 60px 20px;
@@ -47,6 +50,7 @@
             margin: 0;
         }
 
+        /* 主要內容區塊樣式 */
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -64,6 +68,7 @@
             margin-bottom: 30px;
         }
 
+        /* 按鈕樣式 */
         button {
             background-color: #d63384;
             color: white;
@@ -80,6 +85,7 @@
             transform: scale(1.05);
         }
 
+        /* 更多資訊區塊樣式（預設隱藏） */
         .more-info {
             max-width: 800px;
             margin: 20px auto;
@@ -122,6 +128,7 @@
             transform: scale(1.05);
         }
 
+        /* 心得分享區塊樣式 */
         .reflection-box {
             margin: 30px auto;
             padding: 20px;
@@ -145,21 +152,26 @@
 
 <body>
 
+    <!-- 頁首區塊 -->
     <header>
         <h1>歡迎來到我的個人網頁</h1>
     </header>
 
+    <!-- 主要內容區：自我介紹與按鈕 -->
     <div class="container">
         <p class="intro-text">
             大家好，我是 <strong>蔡庠榮</strong>，目前就讀於南台科技大學五專部。
         </p>
 
+        <!-- 點擊按鈕顯示更多資訊 -->
         <button onclick="toggleMoreInfo()">點擊了解更多</button>
     </div>
 
+    <!-- 更多資訊區塊（預設隱藏） -->
     <div class="more-info" id="moreInfo">
         <p>這個網站是我自我介紹與作品展示的地方，歡迎點擊上方選單參觀！</p>
 
+        <!-- 導覽按鈕群組 -->
         <div>
             <button onclick="location.href='homework.html'">🔢 乘法表</button>
             <button onclick="location.href='about.html'">📄 關於我</button>
@@ -168,20 +180,23 @@
             <button onclick="location.href='https://uto-uto.github.io/2025-react-app/'">📚 作業區</button>
         </div>
 
+        <!-- 心得分享區塊 -->
         <div class="reflection-box">
             <h3>💭 心得分享</h3>
             <p>
-                一開始我對資工其實沒有什麼興趣，對寫程式也覺得很陌生甚至有點排斥。<br>
+                一開始我對資工其實沒有什麼興趣，對寫程式也覺得很排斥。<br>
                 但在學習的過程中，雖然困難不少，我慢慢地嘗試理解每一段程式碼的意思，<br>
-                雖然現在說不上有興趣，但至少我學會了不逃避，願意去試著解決問題，<br>
+                雖然現在還是沒有興趣，但至少我學會了不逃避，願意去試著解決問題，<br>
                 這對我來說就是一種進步。
             </p>
         </div>
     </div>
 
+    <!-- JavaScript：控制更多資訊區塊的顯示與隱藏 -->
     <script>
         function toggleMoreInfo() {
             var moreInfo = document.getElementById("moreInfo");
+            // 如果目前隱藏，則顯示並滑動過去；否則隱藏
             if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
                 moreInfo.style.display = "block";
                 moreInfo.scrollIntoView({ behavior: "smooth" });
