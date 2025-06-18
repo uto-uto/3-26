@@ -116,18 +116,34 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
         }
-        
+
         .more-info button:hover {
             background-color: #b92e6d;
             transform: scale(1.05);
         }
-        
+
+        .reflection-box {
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffe6f0;
+            border-left: 6px solid #d63384;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            color: #444;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .reflection-box h3 {
+            color: #d63384;
+            margin-top: 0;
+        }
     </style>
 </head>
 
 <body>
-
-
 
     <header>
         <h1>歡迎來到我的個人網頁</h1>
@@ -143,6 +159,7 @@
 
     <div class="more-info" id="moreInfo">
         <p>這個網站是我自我介紹與作品展示的地方，歡迎點擊上方選單參觀！</p>
+
         <div>
             <button onclick="location.href='homework.html'">🔢 乘法表</button>
             <button onclick="location.href='about.html'">📄 關於我</button>
@@ -150,15 +167,17 @@
             <button onclick="location.href='WaterPuzzle.html'">🎮 小遊戲</button>
             <button onclick="location.href='https://uto-uto.github.io/2025-react-app/'">📚 作業區</button>
         </div>
-    </div>
 
-    <p style="margin-top: 20px; font-size: 18px; color: #555;">
-        一開始我對資工其實沒有什麼興趣，對寫程式也覺得很陌生甚至有點排斥。<br>
-        但在學習的過程中，雖然困難不少，我慢慢地嘗試理解每一段程式碼的意思，<br>
-        雖然現在說不上有興趣，但至少我學會了不逃避，願意去試著解決問題，<br>
-        這對我來說就是一種進步。
-    </p>
-   
+        <div class="reflection-box">
+            <h3>💭 心得分享</h3>
+            <p>
+                一開始我對資工其實沒有什麼興趣，對寫程式也覺得很陌生甚至有點排斥。<br>
+                但在學習的過程中，雖然困難不少，我慢慢地嘗試理解每一段程式碼的意思，<br>
+                雖然現在說不上有興趣，但至少我學會了不逃避，願意去試著解決問題，<br>
+                這對我來說就是一種進步。
+            </p>
+        </div>
+    </div>
 
     <script>
         function toggleMoreInfo() {
